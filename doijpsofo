@@ -1,0 +1,68 @@
+[1mdiff --git a/src/App.js b/src/App.js[m
+[1mindex 6f88b60..5994d6c 100644[m
+[1m--- a/src/App.js[m
+[1m+++ b/src/App.js[m
+[36m@@ -2,12 +2,22 @@[m [mimport React, { Component } from 'react';[m
+ import fruits_veges from './fruits_veges4.jpeg';[m
+ import './App.css';[m
+ import ReactDom from 'react-dom';[m
+[31m-import Popup from 'react-popup'[m
+[32m+[m[32mimport Login from './Login.js';[m
+[32m+[m[32mimport Signup from './Signup.js';[m
+[32m+[m[32mimport Popup from 'react-popup';[m
+ [m
+ class App extends Component {[m
+   [m
+[31m-   login = () => {[m
+[31m-    Popup.alert('Button is clicked!!');[m
+[32m+[m[32m  constructor (props) {[m
+[32m+[m[32m  super(props);[m
+[32m+[m[32m  this.state = {[m
+[32m+[m[32m    login: false[m
+[32m+[m[32m    }[m
+[32m+[m[32m  };[m
+[32m+[m[41m  [m
+[32m+[m[32m  login = (e) => {[m
+[32m+[m[32m    e.preventDefault();[m
+[32m+[m[32m    this.setState({login:true})[m
+   };[m
+   [m
+   render() {[m
+[36m@@ -22,7 +32,7 @@[m [mclass App extends Component {[m
+           <button onClick={this.login}>Login/Register</button>[m
+         </head>[m
+         <body>[m
+[31m-          <Popup />[m
+[32m+[m[32m          { this.state.login ? <Login /> : null }[m
+           <p></p>[m
+           <img src={fruits_veges} />[m
+         </body>[m
+[1mdiff --git a/src/App.test.js b/src/App.test.js[m
+[1mdeleted file mode 100644[m
+[1mindex a754b20..0000000[m
+[1m--- a/src/App.test.js[m
+[1m+++ /dev/null[m
+[36m@@ -1,9 +0,0 @@[m
+[31m-import React from 'react';[m
+[31m-import ReactDOM from 'react-dom';[m
+[31m-import App from './App';[m
+[31m-[m
+[31m-it('renders without crashing', () => {[m
+[31m-  const div = document.createElement('div');[m
+[31m-  ReactDOM.render(<App />, div);[m
+[31m-  ReactDOM.unmountComponentAtNode(div);[m
+[31m-});[m
+[1mdiff --git a/src/Popup.js b/src/Popup.js[m
+[1mindex 8b13789..4ea64cc 100644[m
+[1m--- a/src/Popup.js[m
+[1m+++ b/src/Popup.js[m
+[36m@@ -1 +1,9 @@[m
+ [m
+[32m+[m[32mimport React from 'react';[m
+[32m+[m[32mimport ReactDom from 'react-dom';[m
+[32m+[m[32mimport Popup from 'react-popup';[m
+[32m+[m
+[32m+[m[32mReactDom.render([m
+[32m+[m[32m    <Popup />,[m
+[32m+[m[32m    document.getElementById('popupContainer')[m
+[32m+[m[32m);[m

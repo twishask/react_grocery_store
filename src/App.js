@@ -2,12 +2,22 @@ import React, { Component } from 'react';
 import fruits_veges from './fruits_veges4.jpeg';
 import './App.css';
 import ReactDom from 'react-dom';
-import Popup from 'react-popup'
+import Login from './Login.js';
+import Signup from './Signup.js';
+import Popup from 'react-popup';
 
 class App extends Component {
   
-   login = () => {
-    Popup.alert('Button is clicked!!');
+  constructor (props) {
+  super(props);
+  this.state = {
+    login: false
+    }
+  };
+  
+  login = (e) => {
+    e.preventDefault();
+    this.setState({login:true})
   };
   
   render() {
@@ -22,7 +32,7 @@ class App extends Component {
           <button onClick={this.login}>Login/Register</button>
         </head>
         <body>
-          <Popup />
+          { this.state.login ? <Login /> : null }
           <p></p>
           <img src={fruits_veges} />
         </body>
