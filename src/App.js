@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import fruits_veges from './fruits_veges4.jpeg';
 import './App.css';
+import ReactDom from 'react-dom';
+import Popup from 'react-popup'
 
 class App extends Component {
+  
+   login = () => {
+    Popup.alert('Button is clicked!!');
+  };
+  
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <head className="App-header" >
+          OVF &nbsp; &nbsp; &nbsp;
+          <input type="text" placeholder="Search" size="90"/>
+          &nbsp;
+          <input type="text" placeholder="Location" size="30"/>
+          &nbsp; &nbsp;
+          <button onClick={this.login}>Login/Register</button>
+        </head>
+        <body>
+          <Popup />
+          <p></p>
+          <img src={fruits_veges} />
+        </body>
       </div>
     );
   }
