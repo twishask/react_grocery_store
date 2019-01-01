@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
+import './Login.css';
 import Signup from './Signup.js';
 
 class Login extends Component {
@@ -11,30 +12,22 @@ class Login extends Component {
     password: '',
     signup: false
     }
-  };
-  
-  signup = (e) =>{
-    e.preventDefault()
-    this.setState({signup: true});
-  };
+  }
   
   render() {
     return (
       <div className="App">
        <form className="demoForm">
-       <h2>Login</h2>
        <div className="form-group">
          <label htmlFor="email">Email address</label>
-         <input type="email" className="form-control" name="email" value={this.state.email} />
+         <input type="email" className="form-control" name="email" />
        </div>
        <div className="form-group">
          <label htmlFor="password">Password</label>
-         <input type="password" className="form-control" name="password" value={this.state.password} />
+         <input type="password" className="form-control" name="password" />
        </div>
        <button type="submit">Login</button>
-       <button onClick={this.signup}>New User? Create an account</button>
      </form>
-     { this.state.signup ? <Signup /> : null }
      </div>
     );
   }

@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Popup from 'react-popup';
 
 import * as serviceWorker from './serviceWorker';
 

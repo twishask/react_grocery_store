@@ -1,4 +1,5 @@
 import React from 'react';
+import './Login.css';
 
 class Signup extends React.Component {
     constructor() {
@@ -106,7 +107,6 @@ class Signup extends React.Component {
     return (
     <div id="main-registration-container">
      <div id="register">
-        <h3>Registration page</h3>
         <form method="post"  name="userRegistrationForm"  onSubmit= {this.submituserRegistrationForm} >
         <label>Name</label>
         <input type="text" name="username" value={this.state.fields.username} onChange={this.handleChange} />
