@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import fruits_veges from './fruits_veges4.jpeg';
+import tomato from './Tomato.png';
 import './App.css';
 import ReactDom from 'react-dom';
 import Login from './Login.js';
@@ -8,6 +9,7 @@ import {
   PopupboxManager,
   PopupboxContainer
 } from 'react-popupbox';
+import Products from './Products.js';
 
 class App extends Component {
   
@@ -25,8 +27,8 @@ class App extends Component {
       const content = (
         <div>
           <Signup />
-          <button onClick={PopupboxManager.close}>Close</button>
-        </div>
+          <button className="App-button" onClick={PopupboxManager.close}>Close</button>
+        </div>  
       );
 
       PopupboxManager.update({
@@ -43,7 +45,8 @@ class App extends Component {
         const content = (
           <div>
             <Login />
-            <button onClick={this.updatePopupbox}>New User? Create an account</button>
+            <br></br>
+            <button className="App-button" onClick={this.updatePopupbox}>New User? Create an account</button>
           </div>
         )
         PopupboxManager.open({
@@ -58,22 +61,36 @@ class App extends Component {
         }
       })
     };
+   
   
   render() {
     return (
       <div className="App">
         <header className="App-header" >
           OVF &nbsp; &nbsp; &nbsp;
-          <input type="text" placeholder="Search" size="90"/>
+          <input type="text" placeholder="Search" size="70"/>
           &nbsp;
           <input type="text" placeholder="Location" size="30"/>
           &nbsp; &nbsp;
-          <button onClick={this.openPopupbox}>Login/Register</button>
+          <button className="App-button" onClick={this.openPopupbox}>Login/Register</button>
           <PopupboxContainer />
           </header>
         <body>
           <p></p>
           <img src={fruits_veges} />
+          <br></br>&nbsp; Vegetables<br></br>
+          <div class="flex-container">
+          {Products.map(item => {
+          return <div>
+          <img src={tomato} />
+          {item["name"]}
+          <br></br>
+          {item["Price"]}
+          <br></br>
+          <button>{item["Button"]}</button>
+          </div>;
+        })}
+        </div>
         </body>
       </div>
     );

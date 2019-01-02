@@ -105,7 +105,7 @@ class Signup extends React.Component {
 
   render() {
     return (
-    <div id="main-registration-container">
+    <div id="App">
      <div id="register">
         <form method="post"  name="userRegistrationForm"  onSubmit= {this.submituserRegistrationForm} >
         <label>Name</label>
@@ -120,7 +120,9 @@ class Signup extends React.Component {
         <label>Password</label>
         <input type="password" name="password" value={this.state.fields.password} onChange={this.handleChange} />
         <div className="errorMsg">{this.state.errors.password}</div>
-        <input type="submit" className="button"  value="Register"/>
+        <div className="sub">
+        <button type="submit" className="button">Register</button>
+        </div>
         </form>
     </div>
 </div>
