@@ -69,15 +69,31 @@ button[type=submit]{
   font-size: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.Cart-div {
+  position: absolute;
+  display: block;
+  top: 76px;
+  left: 20px;
+  background-color: #efefef;
+  max-height: 243px;
+  width:350px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Cart-div > ul > li > button {
+  float: right;
+}
+
+.Cart-div > ul {
+  max-height: 155px;
+  overflow: auto;
+  margin: 8px;
+  font-size: 15px;
+}
+
+.Cart-div > h4 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.image {
+  position: relative;
 }
