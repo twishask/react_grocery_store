@@ -1,1 +1,1 @@
-[Demo] (https://react-grocery-store.herokuapp.com/)
+[Demo](https://react-grocery-store.herokuapp.com/)
